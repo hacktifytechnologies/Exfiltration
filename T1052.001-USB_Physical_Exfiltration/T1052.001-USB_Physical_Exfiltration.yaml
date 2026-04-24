@@ -1,0 +1,16 @@
+id: t1052-001-usb-physical-exfiltration
+name: T1052.001 USB Exfiltration Setup
+description: Creates sensitive docs and simulated USB drive for T1052.001 physical exfil exercise
+tactic: exfiltration
+technique_id: T1052
+technique_name: Exfiltration Over Physical Medium
+sub_technique: "Exfiltration over USB"
+tag: "mitre"
+executors:
+  - name: psh
+    platform: windows
+    command: |
+      if (-not (Test-Path "C:\Temp\EF-challenges")) { git clone https://github.com/hacktifytechnologies/Exfiltration "C:\Temp\EF-challenges" } else { git -C "C:\Temp\EF-challenges" pull --quiet }
+      powershell -ExecutionPolicy Bypass -File "C:\Temp\EF-challenges\T1052.001-USB_Physical_Exfiltration\setup.ps1"
+    payloads: []
+    parsers: []
