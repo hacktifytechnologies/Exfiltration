@@ -1,0 +1,16 @@
+id: t1048-003-dns-exfiltration
+name: T1048.003 DNS Exfiltration Setup
+description: Creates DNS exfil client/server for T1048.003 DNS tunneling exercise
+tactic: exfiltration
+technique_id: T1048
+technique_name: Exfiltration Over Alternative Protocol
+sub_technique: "Exfiltration Over Unencrypted Non-C2 Protocol"
+tag: "mitre"
+executors:
+  - name: sh
+    platform: linux
+    command: |
+      git clone https://github.com/hacktifytechnologies/Exfiltration /tmp/EF-challenges 2>/dev/null || git -C /tmp/EF-challenges pull --quiet
+      bash /tmp/EF-challenges/T1048.003-DNS_Exfiltration/setup.sh
+    payloads: []
+    parsers: []
