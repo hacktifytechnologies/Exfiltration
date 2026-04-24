@@ -1,0 +1,16 @@
+id: t1560-001-archive-collected-data
+name: T1560.001 Archive via Utility Setup
+description: Creates loot directory with sensitive data for T1560.001 archiving exercise
+tactic: exfiltration
+technique_id: T1560
+technique_name: Archive Collected Data
+sub_technique: "Archive via Utility"
+tag: "mitre"
+executors:
+  - name: sh
+    platform: linux
+    command: |
+      git clone https://github.com/hacktifytechnologies/Exfiltration /tmp/EF-challenges 2>/dev/null || git -C /tmp/EF-challenges pull --quiet
+      bash /tmp/EF-challenges/T1560.001-Archive_Collected_Data/setup.sh
+    payloads: []
+    parsers: []
