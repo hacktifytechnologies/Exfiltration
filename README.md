@@ -16,4 +16,3 @@
 ## Credentials
 - **Linux**: `player` / `Player@123`
 - **Windows**: `player` / `Player@123!`
-## Flag Format: `HACKTIFY{TECHNIQUE_DESCRIPTION_<hash/hostname>}`
